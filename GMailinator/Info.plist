@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.nompute.mail-plugin.${PRODUCT_NAME:rfc1034identifier}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2013 Michael Lai. All rights reserved.</string>
+	<key>SupportedPluginCompatibilityUUIDs</key>
+	<array>
+		<string>608CE00F-4576-4CAD-B362-F3CCB7DE8D67</string>
+		<string>1146A009-E373-4DB6-AB4D-47E59A7E50FD</string>
+		<string>2183B2CD-BEDF-4AA6-AC18-A1BBED2E3354</string>
+		<string>19B53E95-0964-4AAB-88F9-6D2F8B7B6037</string>
+	</array>
+</dict>
+</plist>
