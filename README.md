@@ -1,10 +1,22 @@
 # GMailinator
 
 Adds Gmail-esque keyboard shorcuts to Mail.app.  This is still very much a work
-in progress.
+in progress.  Tested with Mail for OS X 10.8.4.
 
 ## Supported Shortcuts
 
+<table>
+  <tr><th>Key</th><th>Action</th></tr>
+  <tr><td>c</td><td>Compose new message</td></tr>
+  <tr><td>r</td><td>Reply</td></tr>
+  <tr><td>a</td><td>Reply All</td></tr>
+  <tr><td>y</td><td>Archive</td></tr>
+  <tr><td>#</td><td>Delete</td></tr>
+  <tr><td>j</td><td>Go to previous message/thread</td></tr>
+  <tr><td>k</td><td>Go to next message/thread</td></tr>
+  <tr><td>h</td><td>Go to first message/thread</td></tr>
+  <tr><td>l</td><td>Go to last message/thread</td></tr>
+</table>
 
 ## How to install
 
@@ -23,7 +35,7 @@ in progress.
 ## Credits
 
 A lot of this was built with heavy use of of the
-[BindArchiveToDelete](https://github.com/benlenarts/BindDeleteKeyToArchive)
+[BindDeleteKeyToArchive](https://github.com/benlenarts/BindDeleteKeyToArchive)
 project by Ben Lenarts.  The Xcode project and interface skeleton were
 all from that project, and for the most part, renamed.  I added the keybinding code.
 
