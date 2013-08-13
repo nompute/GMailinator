@@ -30,6 +30,7 @@
     unichar key = [[event characters] characterAtIndex:0];
 
     switch (key) {
+        case 'e':
         case 'y': {
             id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
             [messageViewer performSelector:@selector(archiveMessages:) withObject:nil];
@@ -95,6 +96,13 @@
             [self overrideMailKeyDown: newEvent];
             break;
         }
+        case '/': {
+            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskAlternate);
+            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            [self overrideMailKeyDown: newEvent];
+            break;
+        }
         default:
             [self overrideMailKeyDown:event];
             break;
@@ -106,6 +114,7 @@
     unichar key = [[event characters] characterAtIndex:0];
 
     switch (key) {
+        case 'e':
         case 'y': {
             id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
             [messageViewer performSelector:@selector(archiveMessages:) withObject:nil];
@@ -155,6 +164,13 @@
             CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
             NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
             [self overrideMessagesKeyDown: newEvent];
+            break;
+        }
+        case '/': {
+            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskAlternate);
+            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            [self overrideMailKeyDown: newEvent];
             break;
         }
         default:

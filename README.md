@@ -10,12 +10,13 @@ in progress.  Tested with Mail for OS X 10.8.4.
   <tr><td>c</td><td>Compose new message</td></tr>
   <tr><td>r</td><td>Reply</td></tr>
   <tr><td>a</td><td>Reply All</td></tr>
-  <tr><td>y</td><td>Archive</td></tr>
+  <tr><td>y, e</td><td>Archive</td></tr>
   <tr><td>#</td><td>Delete</td></tr>
   <tr><td>j</td><td>Go to previous message/thread</td></tr>
   <tr><td>k</td><td>Go to next message/thread</td></tr>
   <tr><td>h</td><td>Go to first message/thread</td></tr>
   <tr><td>l</td><td>Go to last message/thread</td></tr>
+  <tr><td>/</td><td></td>Mailbox search</tr>
 </table>
 
 ## How to install
