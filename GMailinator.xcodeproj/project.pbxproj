@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2352AA2217BDE44B001006D0 /* NSArray+reverse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352AA1817BDE44B001006D0 /* NSArray+reverse.m */; };
+		2352AA2317BDE44B001006D0 /* Ranker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2352AA1A17BDE44B001006D0 /* Ranker.mm */; };
+		2352AA2417BDE44B001006D0 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352AA1C17BDE44B001006D0 /* SearchManager.m */; };
+		2352AA2617BDE44B001006D0 /* SearchPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352AA1F17BDE44B001006D0 /* SearchPopup.m */; };
+		2352AA2717BDE44B001006D0 /* SearchPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2352AA2017BDE44B001006D0 /* SearchPopup.xib */; };
+		2352AA2917BDE624001006D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2352AA2817BDE624001006D0 /* Cocoa.framework */; };
+		2352AA2D17BE0F25001006D0 /* GMailinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352AA2C17BE0F25001006D0 /* GMailinator.m */; };
 		239B1F2317B6FD2F002CEA1B /* GMailinator.mailbundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 499015DA1615FE5300991F6C /* GMailinator.mailbundle */; };
-		4907C2F016160E4D001C567E /* GMailinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4907C2EF16160E4D001C567E /* GMailinator.m */; };
 		499015DE1615FE5300991F6C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499015DD1615FE5300991F6C /* CoreFoundation.framework */; };
 		B54609F916F9E3D000101CB2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54609F816F9E3D000101CB2 /* AppKit.framework */; };
 /* End PBXBuildFile section */
@@ -27,8 +33,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4907C2EE16160E4D001C567E /* GMailinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMailinator.h; sourceTree = "<group>"; };
-		4907C2EF16160E4D001C567E /* GMailinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMailinator.m; sourceTree = "<group>"; };
+		2352AA1617BDE44B001006D0 /* Mail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mail.h; sourceTree = "<group>"; };
+		2352AA1717BDE44B001006D0 /* NSArray+reverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+reverse.h"; sourceTree = "<group>"; };
+		2352AA1817BDE44B001006D0 /* NSArray+reverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+reverse.m"; sourceTree = "<group>"; };
+		2352AA1917BDE44B001006D0 /* Ranker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ranker.h; sourceTree = "<group>"; };
+		2352AA1A17BDE44B001006D0 /* Ranker.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Ranker.mm; sourceTree = "<group>"; };
+		2352AA1B17BDE44B001006D0 /* SearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchManager.h; sourceTree = "<group>"; };
+		2352AA1C17BDE44B001006D0 /* SearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchManager.m; sourceTree = "<group>"; };
+		2352AA1E17BDE44B001006D0 /* SearchPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPopup.h; sourceTree = "<group>"; };
+		2352AA1F17BDE44B001006D0 /* SearchPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPopup.m; sourceTree = "<group>"; };
+		2352AA2017BDE44B001006D0 /* SearchPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPopup.xib; sourceTree = "<group>"; };
+		2352AA2817BDE624001006D0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2352AA2B17BE0F25001006D0 /* GMailinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMailinator.h; sourceTree = "<group>"; };
+		2352AA2C17BE0F25001006D0 /* GMailinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMailinator.m; sourceTree = "<group>"; };
 		499015DA1615FE5300991F6C /* GMailinator.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMailinator.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		499015DD1615FE5300991F6C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		499015E11615FE5300991F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2352AA2917BDE624001006D0 /* Cocoa.framework in Frameworks */,
 				B54609F916F9E3D000101CB2 /* AppKit.framework in Frameworks */,
 				499015DE1615FE5300991F6C /* CoreFoundation.framework in Frameworks */,
 			);
@@ -69,6 +87,7 @@
 		499015DC1615FE5300991F6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2352AA2817BDE624001006D0 /* Cocoa.framework */,
 				B54609F816F9E3D000101CB2 /* AppKit.framework */,
 				499015DD1615FE5300991F6C /* CoreFoundation.framework */,
 			);
@@ -78,9 +97,19 @@
 		499015DF1615FE5300991F6C /* GMailinator */ = {
 			isa = PBXGroup;
 			children = (
+				2352AA2B17BE0F25001006D0 /* GMailinator.h */,
+				2352AA2C17BE0F25001006D0 /* GMailinator.m */,
+				2352AA1617BDE44B001006D0 /* Mail.h */,
+				2352AA1717BDE44B001006D0 /* NSArray+reverse.h */,
+				2352AA1817BDE44B001006D0 /* NSArray+reverse.m */,
+				2352AA1917BDE44B001006D0 /* Ranker.h */,
+				2352AA1A17BDE44B001006D0 /* Ranker.mm */,
+				2352AA1B17BDE44B001006D0 /* SearchManager.h */,
+				2352AA1C17BDE44B001006D0 /* SearchManager.m */,
+				2352AA1E17BDE44B001006D0 /* SearchPopup.h */,
+				2352AA1F17BDE44B001006D0 /* SearchPopup.m */,
+				2352AA2017BDE44B001006D0 /* SearchPopup.xib */,
 				499015E01615FE5300991F6C /* Supporting Files */,
-				4907C2EE16160E4D001C567E /* GMailinator.h */,
-				4907C2EF16160E4D001C567E /* GMailinator.m */,
 			);
 			path = GMailinator;
 			sourceTree = "<group>";
@@ -122,7 +151,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = "nompute";
+				ORGANIZATIONNAME = nompute;
 			};
 			buildConfigurationList = 499015D41615FE5300991F6C /* Build configuration list for PBXProject "GMailinator" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -146,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2352AA2717BDE44B001006D0 /* SearchPopup.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +186,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4907C2F016160E4D001C567E /* GMailinator.m in Sources */,
+				2352AA2217BDE44B001006D0 /* NSArray+reverse.m in Sources */,
+				2352AA2317BDE44B001006D0 /* Ranker.mm in Sources */,
+				2352AA2417BDE44B001006D0 /* SearchManager.m in Sources */,
+				2352AA2617BDE44B001006D0 /* SearchPopup.m in Sources */,
+				2352AA2D17BE0F25001006D0 /* GMailinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +255,7 @@
 		499015E91615FE5300991F6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMailinator/GMailinator-Prefix.pch";
@@ -234,6 +269,7 @@
 		499015EA1615FE5300991F6C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMailinator/GMailinator-Prefix.pch";

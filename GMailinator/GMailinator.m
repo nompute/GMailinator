@@ -2,7 +2,19 @@
 #import <objc/objc-runtime.h>
 #import <AppKit/AppKit.h>
 
+NSBundle *GetGMailinatorBundle(void)
+{
+    return [NSBundle bundleForClass:[GMailinator class]];
+}
+
 @implementation GMailinator
+
++ (void)initialize {
+    [GMailinator registerBundle];
+    SearchManager* sm = [[SearchManager alloc] init];
+    [sm setContextMenu: nil];
+    objc_setAssociatedObject(GetGMailinatorBundle(), @"searchManager", sm, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 + (void)load {
     // Add shortcuts to the mailbox list
@@ -24,7 +36,18 @@
 
     class_addMethod(c, overrideSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
     class_replaceMethod(c, originalSelector, method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod));
+
+    NSLog(@"OLD STLYE");
 }
+
++ (void)registerBundle
+{
+    if(class_getClassMethod(NSClassFromString(@"MVMailBundle"), @selector(registerBundle)))
+        [NSClassFromString(@"MVMailBundle") performSelector:@selector(registerBundle)];
+
+    //[[self class] load];
+}
+
 
 - (void)overrideMailKeyDown:(NSEvent*)event {
     unichar key = [[event characters] characterAtIndex:0];
@@ -36,16 +59,16 @@
             [messageViewer performSelector:@selector(archiveMessages:) withObject:nil];
             break;
         }
-        case 'h': {
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 115, true)];
-            [self overrideMailKeyDown: newEvent];
-            break;
-        }
-        case 'l': {
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 119, true)];
-            [self overrideMailKeyDown: newEvent];
-            break;
-        }
+//        case 'h': {
+//            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 115, true)];
+//            [self overrideMailKeyDown: newEvent];
+//            break;
+//        }
+//        case 'l': {
+//            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 119, true)];
+//            [self overrideMailKeyDown: newEvent];
+//            break;
+//        }
         case 'k': {
             NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 126, true)];
             [self overrideMailKeyDown: newEvent];
@@ -120,16 +143,16 @@
             [messageViewer performSelector:@selector(archiveMessages:) withObject:nil];
             break;
         }
-        case 'h': {
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 115, true)];
-            [self overrideMessagesKeyDown: newEvent];
-            break;
-        }
-        case 'l': {
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 119, true)];
-            [self overrideMessagesKeyDown: newEvent];
-            break;
-        }
+//        case 'h': {
+//            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 115, true)];
+//            [self overrideMessagesKeyDown: newEvent];
+//            break;
+//        }
+//        case 'l': {
+//            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 119, true)];
+//            [self overrideMessagesKeyDown: newEvent];
+//            break;
+//        }
         case 'k': {
             NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 123, true)];
             [self overrideMessagesKeyDown: newEvent];

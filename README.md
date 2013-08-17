@@ -14,9 +14,8 @@ in progress.  Tested with Mail for OS X 10.8.4.
   <tr><td>#</td><td>Delete</td></tr>
   <tr><td>j</td><td>Go to previous message/thread</td></tr>
   <tr><td>k</td><td>Go to next message/thread</td></tr>
-  <tr><td>h</td><td>Go to first message/thread</td></tr>
-  <tr><td>l</td><td>Go to last message/thread</td></tr>
-  <tr><td>/</td><td></td>Mailbox search</tr>
+  <tr><td>/</td><td>Mailbox search</td></tr>
+  <tr><td>l</td><td>Move to folder (opens dialog)</td></tr>
 </table>
 
 ## How to install
@@ -39,6 +38,14 @@ A lot of this was built with heavy use of of the
 [BindDeleteKeyToArchive](https://github.com/benlenarts/BindDeleteKeyToArchive)
 project by Ben Lenarts.  The Xcode project and interface skeleton were
 all from that project, and for the most part, renamed.  I added the keybinding code.
+
+A lot of the code is also either copied in whole, or modified from the
+Nostalgy4Mail.app project, by [Hajo Nils
+Krabbenhöft](https://github.com/fxtentacle/Nostalgy-4-Mail.app), and
+subsequently by [Jelmer van der
+Linde](https://github.com/jelmervdl/Nostalgy-4-Mail.app). I've added support
+for ARC (turns out there were quite a few leaks), and prettied-up (imho) the
+move-to-folder dialog.
 
 Other references:
 

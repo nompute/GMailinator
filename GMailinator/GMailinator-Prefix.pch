@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'NoFlaggedMailbox' target in the 'NoFlaggedMailbox' project
+// Prefix header for all source files of the 'GMailinator' target in the 'GMailinator' project
 //
 
 #ifdef __OBJC__
