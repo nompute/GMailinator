@@ -37,6 +37,16 @@ NSBundle *GetGMailinatorBundle(void)
     class_addMethod(c, overrideSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
     class_replaceMethod(c, originalSelector, method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod));
 
+    // Add shortcuts to the messages list
+    c = NSClassFromString(@"MessageViewer");
+    originalSelector = @selector(keyDown:);
+    overrideSelector = @selector(overrideMessagesKeyDown:);
+    originalMethod = class_getInstanceMethod(c, originalSelector);
+    overrideMethod = class_getInstanceMethod(self, overrideSelector);
+
+    class_addMethod(c, overrideSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    class_replaceMethod(c, originalSelector, method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod));
+
     NSLog(@"OLD STLYE");
 }
 
@@ -119,6 +129,13 @@ NSBundle *GetGMailinatorBundle(void)
             [self overrideMailKeyDown: newEvent];
             break;
         }
+        case 'f': {
+            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
+            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            [self overrideMailKeyDown: newEvent];
+            break;
+        }
         case '/': {
             CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
             CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskAlternate);
@@ -178,6 +195,13 @@ NSBundle *GetGMailinatorBundle(void)
         case 'r': {
             CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 15, true);
             CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand);
+            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            [self overrideMessagesKeyDown: newEvent];
+            break;
+        }
+        case 'f': {
+            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
             NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
             [self overrideMessagesKeyDown: newEvent];
             break;
