@@ -65,8 +65,10 @@ NSBundle *GetGMailinatorBundle(void)
     switch (key) {
         case 'e':
         case 'y': {
-            id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
-            [messageViewer performSelector:@selector(archiveMessages:) withObject:nil];
+            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 14, true);
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand);
+            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            [self overrideMailKeyDown: newEvent];
             break;
         }
 //        case 'h': {
@@ -156,8 +158,10 @@ NSBundle *GetGMailinatorBundle(void)
     switch (key) {
         case 'e':
         case 'y': {
-            id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
-            [messageViewer performSelector:@selector(archiveMessages:) withObject:nil];
+            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 14, true);
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand);
+            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            [self overrideMessagesKeyDown: newEvent];
             break;
         }
 //        case 'h': {
