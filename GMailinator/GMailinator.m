@@ -131,7 +131,7 @@ NSBundle *GetGMailinatorBundle(void)
         }
         case 'f': {
             CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift | kCGEventFlagMaskCommand);
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
             NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
             [self overrideMailKeyDown: newEvent];
             break;
@@ -201,9 +201,9 @@ NSBundle *GetGMailinatorBundle(void)
         }
         case 'f': {
             CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift | kCGEventFlagMaskCommand);
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
             NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMailKeyDown: newEvent];
+            [self overrideMessagesKeyDown: newEvent];
             break;
         }
         case 'a': {
