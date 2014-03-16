@@ -46,8 +46,6 @@ NSBundle *GetGMailinatorBundle(void)
 
     class_addMethod(c, overrideSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
     class_replaceMethod(c, originalSelector, method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod));
-
-    NSLog(@"OLD STLYE");
 }
 
 + (void)registerBundle
@@ -61,11 +59,11 @@ NSBundle *GetGMailinatorBundle(void)
 
 - (void)overrideMailKeyDown:(NSEvent*)event {
     unichar key = [[event characters] characterAtIndex:0];
+    id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
 
     switch (key) {
         case 'e':
         case 'y': {
-            id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
             [messageViewer performSelector:@selector(archiveMessages:) withObject:nil];
             break;
         }
@@ -104,36 +102,23 @@ NSBundle *GetGMailinatorBundle(void)
             break;
         }
         case '#': {
-            id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
             [messageViewer performSelector:@selector(deleteMessages:) withObject:nil];
             break;
         }
         case 'c': {
-            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 45, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand);
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMailKeyDown: newEvent];
+            [messageViewer performSelector:@selector(showComposeWindow:) withObject:nil];
             break;
         }
         case 'r': {
-            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 15, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand);
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMailKeyDown: newEvent];
-            break;
-        }
-        case 'a': {
-            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 15, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMailKeyDown: newEvent];
+            [messageViewer performSelector:@selector(replyMessage:) withObject:nil];
             break;
         }
         case 'f': {
-            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMailKeyDown: newEvent];
+            [messageViewer performSelector:@selector(forwardMessage:) withObject:nil];
+            break;
+        }
+        case 'a': {
+            [messageViewer performSelector:@selector(replyAllMessage:) withObject:nil];
             break;
         }
         case '/': {
@@ -156,68 +141,46 @@ NSBundle *GetGMailinatorBundle(void)
     switch (key) {
         case 'e':
         case 'y': {
-            id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
-            [messageViewer performSelector:@selector(archiveMessages:) withObject:nil];
+            [self performSelector:@selector(archiveMessages:) withObject:nil];
             break;
         }
-//        case 'h': {
-//            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 115, true)];
-//            [self overrideMessagesKeyDown: newEvent];
+        // These don't work so well, but it looks like this is a Mail bug; the
+        // menu option for Select next/previous message in conversation just jumps
+        // to the next/previous thread instead.  Also, it looks like capturing left/
+        // right doesn't work for MessageViewer for some reason.
+//        case 'k': {
+//            [self performSelector:@selector(selectNextInThread:) withObject:nil];
 //            break;
 //        }
-//        case 'l': {
-//            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 119, true)];
-//            [self overrideMessagesKeyDown: newEvent];
+//        case 'j': {
+//            [self performSelector:@selector(selectPreviousInThread:) withObject:nil];
 //            break;
 //        }
-        case 'k': {
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 123, true)];
-            [self overrideMessagesKeyDown: newEvent];
-            break;
-        }
-        case 'j': {
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: CGEventCreateKeyboardEvent(NULL, 124, true)];
-            [self overrideMessagesKeyDown: newEvent];
-            break;
-        }
         case '#': {
-            id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
-            [messageViewer performSelector:@selector(deleteMessages:) withObject:nil];
+            [self performSelector:@selector(deleteMessages:) withObject:nil];
             break;
         }
         case 'c': {
-            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 45, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand);
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMessagesKeyDown: newEvent];
+            [self performSelector:@selector(showComposeWindow:) withObject:nil];
             break;
         }
         case 'r': {
-            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 15, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand);
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMessagesKeyDown: newEvent];
+            [self performSelector:@selector(replyMessage:) withObject:nil];
             break;
         }
         case 'f': {
-            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMessagesKeyDown: newEvent];
+            [self performSelector:@selector(forwardMessage:) withObject:nil];
             break;
         }
         case 'a': {
-            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 15, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
-            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMessagesKeyDown: newEvent];
+            [self performSelector:@selector(replyAllMessage:) withObject:nil];
             break;
         }
         case '/': {
             CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 3, true);
             CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskAlternate);
             NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            [self overrideMailKeyDown: newEvent];
+            [self overrideMessagesKeyDown: newEvent];
             break;
         }
         default:
