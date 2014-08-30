@@ -10,29 +10,29 @@
 	<string>GMailinator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>21C0C331-9D6F-4D22-8307-CF30C0C45785</key>
+		<key>D3B0BC1A7A1479E55C417B7EE7FB1CDB37E92EAE</key>
 		<string>ssh://github.com/Zyber17/GMailinator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GMailinator.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>21C0C331-9D6F-4D22-8307-CF30C0C45785</key>
+		<key>D3B0BC1A7A1479E55C417B7EE7FB1CDB37E92EAE</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/Zyber17/GMailinator.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>21C0C331-9D6F-4D22-8307-CF30C0C45785</string>
+	<string>D3B0BC1A7A1479E55C417B7EE7FB1CDB37E92EAE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>21C0C331-9D6F-4D22-8307-CF30C0C45785</string>
+			<string>D3B0BC1A7A1479E55C417B7EE7FB1CDB37E92EAE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GMailinator</string>
 		</dict>
