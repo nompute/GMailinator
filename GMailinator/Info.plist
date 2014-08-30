@@ -26,6 +26,7 @@
 	<string>Copyright © 2013 Michael Lai. All rights reserved.</string>
 	<key>SupportedPluginCompatibilityUUIDs</key>
 	<array>
+		<string>0A13A9ED-4864-4F07-AE70-60FB2F7EA63D</string>
 		<string>DAFFB2B4-77BC-4C25-8CE1-2405E652D54B</string>
 		<string>2B98D2DD-000B-4521-83EB-7BFCB9B161C8</string>
 		<string>608CE00F-4576-4CAD-B362-F3CCB7DE8D67</string>
