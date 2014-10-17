@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D6CDCCDE-DBC4-49FF-BA75-676B7BCCC2C1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GMailinator</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D3B0BC1A7A1479E55C417B7EE7FB1CDB37E92EAE</key>
+		<string>https://github.com/rhoop/GMailinator.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GMailinator.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D3B0BC1A7A1479E55C417B7EE7FB1CDB37E92EAE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rhoop/GMailinator.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D3B0BC1A7A1479E55C417B7EE7FB1CDB37E92EAE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D3B0BC1A7A1479E55C417B7EE7FB1CDB37E92EAE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GMailinator</string>
+		</dict>
+	</array>
+</dict>
+</plist>
