@@ -8,6 +8,9 @@ NSBundle *GetGMailinatorBundle(void)
 }
 
 @implementation GMailinator
+{
+    NSDate *_tabDate;
+}
 
 + (void)initialize {
     [GMailinator registerBundle];
@@ -44,6 +47,16 @@ NSBundle *GetGMailinatorBundle(void)
     originalMethod = class_getInstanceMethod(c, originalSelector);
     overrideMethod = class_getInstanceMethod(self, overrideSelector);
 
+    class_addMethod(c, overrideSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    class_replaceMethod(c, originalSelector, method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod));
+
+    // Add shortcuts to the message editor
+    c = NSClassFromString(@"MessageWebHTMLView");
+    originalSelector = @selector(keyDown:);
+    overrideSelector = @selector(overrideMessageEditorKeyDown:);
+    originalMethod = class_getInstanceMethod(c, originalSelector);
+    overrideMethod = class_getInstanceMethod(self, overrideSelector);
+    
     class_addMethod(c, overrideSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
     class_replaceMethod(c, originalSelector, method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod));
 }
@@ -189,5 +202,37 @@ NSBundle *GetGMailinatorBundle(void)
 
     }
 }
+
+- (void)overrideMessageEditorKeyDown:(NSEvent*)event {
+    unichar key = [[event characters] characterAtIndex:0];
+
+    switch (key) {
+        case '\t': {
+            _tabDate = [NSDate date];
+            [self overrideMessageEditorKeyDown:event];
+            break;
+        }
+        case '\r': {
+            if (_tabDate) {
+                double timePassed_ms = [_tabDate timeIntervalSinceNow] * -1000.0;
+                if (timePassed_ms < 500) {
+                    CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 2, true); // D
+                    CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
+                    NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
+                    [self overrideMessageEditorKeyDown: newEvent];
+                    break;
+                } else {
+                    _tabDate = nil; // avoid unnecessary calculations later
+                }
+            }
+            [self overrideMessageEditorKeyDown:event];
+            break;
+        }
+        default:
+            [self overrideMessageEditorKeyDown:event];
+            break;
+    }
+}
+
 
 @end
