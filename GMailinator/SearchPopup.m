@@ -18,7 +18,6 @@
 - (void)addMenu:(NSMenu *)menu toDictionary:(NSMutableDictionary *)dict withPath:(NSMutableArray *)path atLevel:(int)depth
 {
     NSArray *items = [menu itemArray];
-    
     for (int i = 0; i < [items count]; ++i)
     {
         NSMenuItem *menuItem = [items objectAtIndex:i];
@@ -57,9 +56,13 @@
 
 	// update menu items
 	[[submenu delegate] menuNeedsUpdate: submenu ];
+    
 	// set message handling to copy / move
-	//[submenu _sendMenuOpeningNotification];
-    [submenu performSelector:@selector(_sendMenuOpeningNotification)];
+    if ([submenu respondsToSelector:@selector(_sendMenuOpeningNotification:)]) { // Yosemite 10.10.2
+        [submenu performSelector:@selector(_sendMenuOpeningNotification:)];
+    } else if ([submenu respondsToSelector:@selector(_sendMenuOpeningNotification)]) {
+        [submenu performSelector:@selector(_sendMenuOpeningNotification)];
+    }
 	
 //	if ([p lastFolder] != nil)
 //    {
@@ -137,7 +140,9 @@ NSInteger compareMatch(id l_row, id r_row, void *query)
         {
 //			[parent setLastFolder: selectedResult objectAtIndex:0]];
             NSMenuItem *menuItem = [selectedResult objectForKey:@"menuItem"];
-            [[menuItem menu] performActionForItemAtIndex:[[menuItem menu] indexOfItem:menuItem]];
+            NSMenu *menu = [menuItem menu];
+            NSInteger index = [menu indexOfItem:menuItem];
+            [menu performActionForItemAtIndex:index];
 		}
         
 		[searchWindow orderOut:nil];
