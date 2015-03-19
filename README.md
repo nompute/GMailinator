@@ -16,6 +16,8 @@ in progress.  Tested with Mail for OS X 10.8.4.
   <tr><td>k</td><td>Go to next message/thread</td></tr>
   <tr><td>/</td><td>Mailbox search</td></tr>
   <tr><td>l</td><td>Move to folder (opens dialog)</td></tr>
+  <tr><td>s</td><td>Flag</td></tr>
+  <tr><td>tab, then enter</td><td>Send message</td></tr>
 </table>
 
 ## How to install
