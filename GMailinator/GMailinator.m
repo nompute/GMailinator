@@ -1,5 +1,6 @@
 #import "GMailinator.h"
 #import <objc/objc-runtime.h>
+#import <Carbon/Carbon.h>
 #import <AppKit/AppKit.h>
 
 NSBundle *GetGMailinatorBundle(void)
@@ -143,6 +144,13 @@ NSBundle *GetGMailinatorBundle(void)
         }
         case 's': {
             CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, 0x25, true); // l
+            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
+            NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
+            [self overrideMailKeyDown: newEvent];
+            break;
+        }
+        case 'u': {
+            CGEventRef cgEvent = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_U, true);
             CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
             NSEvent *newEvent = [NSEvent eventWithCGEvent: cgEvent];
             [self overrideMailKeyDown: newEvent];
