@@ -151,7 +151,7 @@
 		499015D11615FE5300991F6C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = nompute;
 			};
 			buildConfigurationList = 499015D41615FE5300991F6C /* Build configuration list for PBXProject "GMailinator" */;
@@ -225,6 +225,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -277,6 +278,7 @@
 				GCC_PREFIX_HEADER = "GMailinator/GMailinator-Prefix.pch";
 				INFOPLIST_FILE = GMailinator/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nompute.gmailinator.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GMailinator;
 				WRAPPER_EXTENSION = mailbundle;
 			};
@@ -291,6 +293,7 @@
 				GCC_PREFIX_HEADER = "GMailinator/GMailinator-Prefix.pch";
 				INFOPLIST_FILE = GMailinator/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nompute.gmailinator.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GMailinator;
 				WRAPPER_EXTENSION = mailbundle;
 			};
