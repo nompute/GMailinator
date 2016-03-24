@@ -57,7 +57,8 @@
     }
     
     [sp setSubmenu: submenu];
-    [NSBundle loadNibNamed: @"SearchPopup" owner:sp];
+
+    [[NSBundle mainBundle] loadNibNamed:@"SearchPopup" owner:sp topLevelObjects:nil];
 
     return sp;
 }
