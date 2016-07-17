@@ -1,7 +1,7 @@
 # GMailinator
 
 Adds Gmail-esque keyboard shorcuts to Mail.app.  This is still very much a work
-in progress.  Tested with Mail for OS X 10.8.4.
+in progress.  Tested with Mail for OS X 10.11.5.
 
 ## Supported Shortcuts
 
