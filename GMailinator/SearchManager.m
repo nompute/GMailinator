@@ -57,6 +57,12 @@
     }
     
     [sp setSubmenu: submenu];
+
+    // The call bellow, should be replace by:
+    //
+    //    [[NSBundle mainBundle] loadNibNamed:@"SearchPopup" owner:sp topLevelObjects:nil];
+    //
+    // But for reasons I still don't know, the proper way to load the xib makes the popup to not show!
     [NSBundle loadNibNamed: @"SearchPopup" owner:sp];
 
     return sp;

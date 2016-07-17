@@ -5,20 +5,27 @@ in progress.  Tested with Mail for OS X 10.8.4.
 
 ## Supported Shortcuts
 
-<table>
-  <tr><th>Key</th><th>Action</th></tr>
-  <tr><td>c</td><td>Compose new message</td></tr>
-  <tr><td>r</td><td>Reply</td></tr>
-  <tr><td>a</td><td>Reply All</td></tr>
-  <tr><td>y, e</td><td>Archive</td></tr>
-  <tr><td>#</td><td>Delete</td></tr>
-  <tr><td>j</td><td>Go to previous message/thread</td></tr>
-  <tr><td>k</td><td>Go to next message/thread</td></tr>
-  <tr><td>/</td><td>Mailbox search</td></tr>
-  <tr><td>l</td><td>Move to folder (opens dialog)</td></tr>
-  <tr><td>s</td><td>Flag</td></tr>
-  <tr><td>tab, then enter</td><td>Send message</td></tr>
-</table>
+|  Key   | Action                         |
+| :----: | ------------------------------ |
+|   #    |  Delete                        |
+|   /    |  Mailbox search                |
+|   !    |  Toggle message as Junk        |
+|   a    |  Reply All                     |
+|   c    |  Compose new message           |
+|  e, y  |  Archive                       |
+|   f    |  Forward message               |
+|   G    |  Go to the last message        |
+|   g    |  Go to the first message       |
+|   j    |  Go to next message/thread     |
+|   k    |  Go to previous message/thread |
+|   l    |  Move to folder (opens dialog) |
+|   o    |  Open selected message         |
+|   R    |  Get new mail (Refresh)        |
+|   r    |  Reply                         |
+|   s    |  Flag                          |
+|   u    |  Toggle message as read        |
+|   v    |  View raw message dialog       |
+|   z    |  Undo                          |
 
 ## How to install
 
