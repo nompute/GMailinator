@@ -195,7 +195,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Grabbing the mail app uuid for your version....\"\necho \"the Source_ROOT ${SOURCE_ROOT}\"\n\ndefaults write ${SOURCE_ROOT}/GMailinator/Info.plist SupportedPluginCompatibilityUUIDs -array-add \"`${SOURCE_ROOT}/find_uuid.sh`\"";
+			shellScript = "echo \"Grabbing the mail app uuid for your version....\"\necho \"the Source_ROOT ${SOURCE_ROOT}\"\n\ndefaults write ${SOURCE_ROOT}/GMailinator/Info.plist Supported10.12PluginCompatibilityUUIDs -array-add \"`${SOURCE_ROOT}/find_uuid.sh`\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
