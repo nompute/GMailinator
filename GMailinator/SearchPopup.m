@@ -39,7 +39,7 @@
             [self addMenu:[menuItem submenu]
                 toDictionary:dict
                  withPath:path
-                  atLevel:level + 1];
+                  atLevel:(int)level + 1];
     }
 }
 
