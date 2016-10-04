@@ -131,7 +131,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 499015E81615FE5300991F6C /* Build configuration list for PBXNativeTarget "GMailinator" */;
 			buildPhases = (
-                A718F5961A681B6700545966 /* Save current UUID to Info.plist */,
+				A718F5961A681B6700545966 /* Save current UUID to Info.plist */,
 				499015D61615FE5300991F6C /* Sources */,
 				499015D71615FE5300991F6C /* Frameworks */,
 				499015D81615FE5300991F6C /* Resources */,
