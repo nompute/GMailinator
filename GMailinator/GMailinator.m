@@ -59,7 +59,15 @@ NSBundle *GetGMailinatorBundle(void)
 
 - (void)overrideMailKeyDown:(NSEvent*)event {
     unichar key = [[event characters] characterAtIndex:0];
-    id messageViewer = [[self performSelector:@selector(delegate)] performSelector:@selector(delegate)];
+
+    id tableViewManager = [self performSelector:@selector(delegate)];
+    id messageListViewController = [tableViewManager performSelector:@selector(delegate)];
+
+    // NOTE: backwards compatibility. In 10.11 and earlier, tableViewManager.delegate.delegate was already the message viewer.
+    id messageViewer
+      = [messageListViewController respondsToSelector:@selector(messageViewer)]
+      ? [messageListViewController performSelector:@selector(messageViewer)]
+      : messageListViewController;
 
     switch (key) {
         case 'e':
@@ -131,7 +139,7 @@ NSBundle *GetGMailinatorBundle(void)
         default:
             [self overrideMailKeyDown:event];
             break;
-            
+
     }
 }
 
