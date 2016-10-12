@@ -137,6 +137,14 @@ NSBundle *GetGMailinatorBundle(void)
             [messageViewer performSelector:@selector(toggleFlaggedStatus:) withObject:nil];
             break;
         }
+        case 'u': {
+            [messageViewer performSelector:@selector(markAsRead:) withObject:nil];
+            break;
+        }
+        case 'U': {
+            [messageViewer performSelector:@selector(markAsUnread:) withObject:nil];
+            break;
+        }
         default:
             performed = NO;
     }
@@ -200,12 +208,6 @@ NSBundle *GetGMailinatorBundle(void)
         case 'K': { // expand selection to previous message (up)
             cgEvent = CGEventCreateKeyboardEvent(NULL, kVK_UpArrow, true);
             CGEventSetFlags(cgEvent, kCGEventFlagMaskShift);
-            newEvent = [NSEvent eventWithCGEvent: cgEvent];
-            break;
-        }
-        case 'u': { // mark selected messages as unread
-            cgEvent = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_U, true);
-            CGEventSetFlags(cgEvent, kCGEventFlagMaskCommand | kCGEventFlagMaskShift);
             newEvent = [NSEvent eventWithCGEvent: cgEvent];
             break;
         }
