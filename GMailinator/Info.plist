@@ -27,6 +27,7 @@
 	<key>Supported10.12PluginCompatibilityUUIDs</key>
 	<array>
 		<string>36CCB8BB-2207-455E-89BC-B9D6E47ABB5B</string>
+                <string>9054AFD9-2607-489E-8E63-8B09A749BC61</string>
 	</array>
 	<key>SupportedPluginCompatibilityUUIDs</key>
 	<array>
@@ -50,7 +51,6 @@
 		<string>AB695A2B-4605-4A74-A99F-AF9F9C92C41B</string>
 		<string>1550C683-EA48-4036-B7CE-FB6F5D13EE02</string>
 		<string>71562B89-0D90-4588-8E94-A75B701D6443</string>
-		<string>36CCB8BB-2207-455E-89BC-B9D6E47ABB5B</string>
 	</array>
 </dict>
 </plist>
