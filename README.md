@@ -1,7 +1,7 @@
 # GMailinator
 
 Adds Gmail-esque keyboard shorcuts to Mail.app.  This is still very much a work
-in progress.  Tested with Mail for OS X 10.11.5.
+in progress.  Tested with Mail for OS X Sierra.
 
 ## Supported Shortcuts
 
@@ -23,7 +23,8 @@ in progress.  Tested with Mail for OS X 10.11.5.
 |   R    |  Get new mail (Refresh)        |
 |   r    |  Reply                         |
 |   s    |  Flag                          |
-|   u    |  Toggle message as read        |
+|   u    |  Mark message as read          |
+|   U    |  Mark message as unread        |
 |   v    |  View raw message dialog       |
 |   z    |  Undo                          |
 
