@@ -31,6 +31,10 @@
 		<string>1CD3B36A-0E3B-4A26-8F7E-5BDF96AAC97E</string>
 		<string>21560BD9-A3CC-482E-9B99-95B7BF61EDC1</string>
 	</array>
+	<key>Supported10.13PluginCompatibilityUUIDs</key>
+	<array>
+		<string>C86CD990-4660-4E36-8CDA-7454DEB2E199</string>
+	</array>
 	<key>SupportedPluginCompatibilityUUIDs</key>
 	<array>
 		<string>DAF41AB7-F9AD-4273-9934-C81C74705B69</string>
