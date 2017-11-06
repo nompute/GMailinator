@@ -44,7 +44,7 @@ in progress.  Tested with Mail for OS X Sierra.
 
 ## Credits
 
-A lot of this was built with heavy use of of the
+A lot of this was built with heavy use of the
 [BindDeleteKeyToArchive](https://github.com/benlenarts/BindDeleteKeyToArchive)
 project by Ben Lenarts.  The Xcode project and interface skeleton were
 all from that project, and for the most part, renamed.  I added the keybinding code.
