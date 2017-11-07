@@ -1,22 +1,32 @@
 # GMailinator
 
 Adds Gmail-esque keyboard shorcuts to Mail.app.  This is still very much a work
-in progress.  Tested with Mail for OS X 10.8.4.
+in progress.  Tested with Mail for OS X Sierra.
 
 ## Supported Shortcuts
 
-<table>
-  <tr><th>Key</th><th>Action</th></tr>
-  <tr><td>c</td><td>Compose new message</td></tr>
-  <tr><td>r</td><td>Reply</td></tr>
-  <tr><td>a</td><td>Reply All</td></tr>
-  <tr><td>y, e</td><td>Archive</td></tr>
-  <tr><td>#</td><td>Delete</td></tr>
-  <tr><td>j</td><td>Go to previous message/thread</td></tr>
-  <tr><td>k</td><td>Go to next message/thread</td></tr>
-  <tr><td>/</td><td>Mailbox search</td></tr>
-  <tr><td>l</td><td>Move to folder (opens dialog)</td></tr>
-</table>
+|  Key   | Action                         |
+| :----: | ------------------------------ |
+|   #    |  Delete                        |
+|   /    |  Mailbox search                |
+|   !    |  Toggle message as Junk        |
+|   a    |  Reply All                     |
+|   c    |  Compose new message           |
+|  e, y  |  Archive                       |
+|   f    |  Forward message               |
+|   G    |  Go to the last message        |
+|   g    |  Go to the first message       |
+|   j    |  Go to next message/thread     |
+|   k    |  Go to previous message/thread |
+|   l    |  Move to folder (opens dialog) |
+|   o    |  Open selected message         |
+|   R    |  Get new mail (Refresh)        |
+|   r    |  Reply                         |
+|   s    |  Flag                          |
+|   u    |  Mark message as read          |
+|   U    |  Mark message as unread        |
+|   v    |  View raw message dialog       |
+|   z    |  Undo                          |
 
 ## How to install
 
@@ -34,7 +44,7 @@ in progress.  Tested with Mail for OS X 10.8.4.
 
 ## Credits
 
-A lot of this was built with heavy use of of the
+A lot of this was built with heavy use of the
 [BindDeleteKeyToArchive](https://github.com/benlenarts/BindDeleteKeyToArchive)
 project by Ben Lenarts.  The Xcode project and interface skeleton were
 all from that project, and for the most part, renamed.  I added the keybinding code.

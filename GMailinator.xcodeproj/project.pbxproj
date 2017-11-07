@@ -75,6 +75,7 @@
 				499015DB1615FE5300991F6C /* Products */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		499015DB1615FE5300991F6C /* Products */ = {
 			isa = PBXGroup;
@@ -130,6 +131,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 499015E81615FE5300991F6C /* Build configuration list for PBXNativeTarget "GMailinator" */;
 			buildPhases = (
+				A718F5961A681B6700545966 /* Save current UUID to Info.plist */,
 				499015D61615FE5300991F6C /* Sources */,
 				499015D71615FE5300991F6C /* Frameworks */,
 				499015D81615FE5300991F6C /* Resources */,
@@ -150,7 +152,7 @@
 		499015D11615FE5300991F6C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = nompute;
 			};
 			buildConfigurationList = 499015D41615FE5300991F6C /* Build configuration list for PBXProject "GMailinator" */;
@@ -181,6 +183,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A718F5961A681B6700545966 /* Save current UUID to Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Save current UUID to Info.plist";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Grabbing the mail app uuid for your version....\"\necho \"the Source_ROOT ${SOURCE_ROOT}\"\n\ndefaults write ${SOURCE_ROOT}/GMailinator/Info.plist SupportedPluginCompatibilityUUIDs -array-add \"`${SOURCE_ROOT}/find_uuid.sh`\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		499015D61615FE5300991F6C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -201,13 +220,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -232,7 +251,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -261,6 +279,7 @@
 				GCC_PREFIX_HEADER = "GMailinator/GMailinator-Prefix.pch";
 				INFOPLIST_FILE = GMailinator/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nompute.gmailinator.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GMailinator;
 				WRAPPER_EXTENSION = mailbundle;
 			};
@@ -275,6 +294,7 @@
 				GCC_PREFIX_HEADER = "GMailinator/GMailinator-Prefix.pch";
 				INFOPLIST_FILE = GMailinator/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nompute.gmailinator.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GMailinator;
 				WRAPPER_EXTENSION = mailbundle;
 			};

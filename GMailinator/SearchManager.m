@@ -57,6 +57,12 @@
     }
     
     [sp setSubmenu: submenu];
+
+    // The call bellow, should be replace by:
+    //
+    //    [[NSBundle mainBundle] loadNibNamed:@"SearchPopup" owner:sp topLevelObjects:nil];
+    //
+    // But for reasons I still don't know, the proper way to load the xib makes the popup to not show!
     [NSBundle loadNibNamed: @"SearchPopup" owner:sp];
 
     return sp;
@@ -95,10 +101,17 @@
 
 - (void) setContextMenu:(NSMenu *)menu {
     
-    NSMenuItem* moveFolderItem =  [self newMenuItemWithTitle: @"Move to Folder..." action: @selector(moveToFolder:) andKeyEquivalent: @"l" inMenu: [[NSApplication sharedApplication] mainMenu] withTitle: @"Move Again" offset: 1];
+    // create "Move to Folder..." menu item just below the existing "Move Again" menuitem
+    NSMenuItem* moveFolderItem =  [self newMenuItemWithTitle: @"Move to Folder..."
+                                                      action: @selector(moveToFolder:)
+                                            andKeyEquivalent: @"l"
+                                                      inMenu: [[NSApplication sharedApplication] mainMenu]
+                                                   withTitle: @"Move Again"
+                                                      offset: 1];
     [moveFolderItem setTarget: self];
     [moveFolderItem setKeyEquivalentModifierMask: 0];
 
+    // lookup existing "Move to" and "Copy to" menuitems
     NSMenu* messagesMenu = [moveFolderItem menu];
     NSArray     *items = [messagesMenu itemArray];
     for (int iI = 0; iI < [items count]; iI++) {
